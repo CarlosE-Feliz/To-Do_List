@@ -28,7 +28,7 @@ var data = [
         +'<div class="label-div">'
         +`<label class="label-info"> ${data[i].description}</label>`
         +'</div>'
-        +'<p class="icon"> </p>'
+        +'<p class="icon"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></p>'
         +'</li>';
     }
 }
