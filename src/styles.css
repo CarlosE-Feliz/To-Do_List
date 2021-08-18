@@ -1,7 +1,129 @@
-body {
-    margin: 0;
-    display: flex;
-    background-color: bisque;
-    justify-content: center;
-    align-content: center;
+* {
+  font-family: "Times New Roman", Times, serif;
+  color: #545862;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+}
+
+.main {
+  display: flex;
+}
+
+.to-do-list {
+  width: 100%;
+  margin: 5px;
+  align-content: center;
+  justify-content: center;
+}
+
+.footer {
+  width: 100%;
+  height: 179px;
+}
+
+input {
+  outline: none;
+}
+
+.div-list {
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.ul-list {
+  list-style: none;
+  justify-self: center;
+  padding: 0;
+}
+
+.list-el {
+  background-color: rgb(255, 255, 255);
+  padding: 0 3em;
+  font-size: 25px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-weight: 300;
+  align-items: center;
+}
+
+.checkbox {
+  position: relative;
+  left: -45.99px;
+}
+
+.label-div {
+  width: 250px;
+}
+
+.icon {
+  position: relative;
+  right: -50px;
+}
+
+.head {
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 5px;
+}
+
+.head h3 {
+  margin: 15px;
+}
+
+.head p {
+  margin: 18px;
+  font-size: 11px;
+  cursor: pointer;
+  color: #333;
+}
+
+.ul-list1 {
+  list-style: none;
+  margin: 25px;
+}
+
+.input1 {
+  position: relative;
+  left: -55px;
+  border: none;
+}
+
+.input2 {
+  position: relative;
+  color: #333;
+  cursor: pointer;
+}
+
+.add-new {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.clear {
+  text-align: center;
+  cursor: pointer;
+  background-color: #ddd;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.clear p {
+  margin: 15px;
+}
+
+.form {
+  justify-content: space-between;
+}
+
+.label-info {
+  font-weight: 200;
+  font-size: 15px;
+  flex-basis: 90%;
 }

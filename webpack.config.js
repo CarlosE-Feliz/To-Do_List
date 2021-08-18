@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -10,7 +11,7 @@ module.exports = {
       },
   plugins: [
     new HtmlWebpackPlugin({
-   template: 'dist/index.html'
+      template: './src/index.html'
     }),
   ],
   output: {
