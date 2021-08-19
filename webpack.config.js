@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -6,11 +7,11 @@ module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
-     contentBase: './dist',
-      },
+    contentBase: './dist',
+  },
   plugins: [
     new HtmlWebpackPlugin({
-   template: 'dist/index.html'
+      template: './src/index.html',
     }),
   ],
   output: {
@@ -29,8 +30,6 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
-      
     ],
   },
- 
 };
