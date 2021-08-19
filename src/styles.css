@@ -38,6 +38,7 @@ input {
   list-style: none;
   justify-self: center;
   padding: 0;
+  margin: 0;
 }
 
 .list-el {
@@ -126,4 +127,14 @@ input {
   font-weight: 200;
   font-size: 15px;
   flex-basis: 90%;
+}
+
+.label-true {
+  text-decoration: line-through;
+  background: aliceblue;
+}
+
+.label-true label {
+  font-family: cursive;
+  opacity: 0.8;
 }
