@@ -56,12 +56,13 @@ input {
 }
 
 .label-div {
-  width: 250px;
+  width: 150px;
 }
 
 .icon {
   position: relative;
   right: -50px;
+  cursor: pointer;
 }
 
 .head {
@@ -88,6 +89,7 @@ input {
 }
 
 .input1 {
+  width: 100%;
   position: relative;
   left: -55px;
   border: none;
@@ -137,4 +139,31 @@ input {
 .label-true label {
   font-family: cursive;
   opacity: 0.8;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.icon .close {
+  display: none;
+}
+
+.input-edit {
+  border-radius: 5px;
+  font-weight: 200;
+  font-size: 15px;
+  position: relative;
+  right: 10px;
+  border: none;
+  display: none;
+}
+
+.apear {
+  display: flex;
+}
+
+.disapear {
+  display: none !important;
 }
