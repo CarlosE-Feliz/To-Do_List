@@ -8,10 +8,16 @@ export default class Completed {
           this.labels = document.getElementById(`li-${[o]}`);
           this.labels.classList.add('label-true');
           data[o].completed = true;
+          document.getElementById(`open-${[o]}`).style.display = 'none';
+          document.getElementById(`close-${[o]}`).style.display = 'flex';
+          document.getElementById(`input-${[o]}`).style.background = 'aliceblue';
         } else {
           this.labels = document.getElementById(`li-${[o]}`);
           this.labels.classList.remove('label-true');
           data[o].completed = false;
+          document.getElementById(`open-${[o]}`).style.display = 'flex';
+          document.getElementById(`close-${[o]}`).style.display = 'none';
+          document.getElementById(`input-${[o]}`).style.background = 'none';
         }
         localStorage.setItem('Task', JSON.stringify(data));
       });
