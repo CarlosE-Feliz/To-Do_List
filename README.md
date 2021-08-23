@@ -7,7 +7,7 @@
 Set up a "To Do List" project
 
 
-## Live Demo
+## Live Version
 
 [Live demo](https://xjokeer.github.io/To-Do_List/)
 
