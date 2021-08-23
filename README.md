@@ -9,7 +9,7 @@ Set up a "To Do List" project
 
 ## Live Version
 
-[Live demo](https://xjokeer.github.io/To-Do_List/)
+[Live version](https://xjokeer.github.io/To-Do_List/)
 
 # Functionality 
 ## click once delete.
