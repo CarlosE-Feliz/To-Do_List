@@ -18,3 +18,14 @@ describe('Add and delete item', () => {
     expect(list).toHaveLength(0);
   });
 });
+
+describe('Add and Remove Items from local Storage', () => {
+  test('Add new item to localStorage', () => {
+    Add();
+    expect(JSON.parse(localStorage.getItem('Task'))).toHaveLength(1);
+  });
+  test('delete one item from the localStorage', () => {
+    remove(0);
+    expect(JSON.parse(localStorage.getItem('Task'))).toHaveLength(0);
+  });
+});
