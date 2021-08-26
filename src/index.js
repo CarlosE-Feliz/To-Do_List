@@ -67,24 +67,18 @@ function edit(e) {
       inputs.addEventListener('keyup', (e) => {
         const keycode = e.keyCode || e.which;
         if (keycode === 13) {
-          const newValue =
-            o.parentElement.parentElement.querySelector('.input-edit').value;
-          const newLabels =
-            o.parentElement.parentElement.querySelector('.label-info');
+          const newValue = o.parentElement.parentElement.querySelector('.input-edit').value;
+          const newLabels = o.parentElement.parentElement.querySelector('.label-info');
           newLabels.innerHTML = newValue;
           data[index].description = newValue;
           localStorage.setItem('Task', JSON.stringify(data));
         }
       });
-      o.parentElement.parentElement.querySelector('.open').style.display =
-        'none';
-      o.parentElement.parentElement.querySelector('.close').style.display =
-        'flex';
+      o.parentElement.parentElement.querySelector('.open').style.display = 'none';
+      o.parentElement.parentElement.querySelector('.close').style.display = 'flex';
     } else {
-      o.parentElement.parentElement.querySelector('.open').style.display =
-        'flex';
-      o.parentElement.parentElement.querySelector('.close').style.display =
-        'none';
+      o.parentElement.parentElement.querySelector('.open').style.display = 'flex';
+      o.parentElement.parentElement.querySelector('.close').style.display = 'none';
     }
   });
 }
