@@ -25,9 +25,8 @@ export function createTask() {
 
 export function Add() {
   const addNew = global.document.querySelector('#form input');
-  const description = addNew.value;
   data.push({
-    description,
+    description: addNew.value,
     completed: false,
     index: null,
   });
@@ -37,19 +36,19 @@ export function Add() {
 export function remove() {
   const insert = document.getElementById('ul-list');
   const checks = document.querySelectorAll('.label-true');
-  checks.forEach((e) => {
-    data.splice(e, 1);
-    insert.removeChild(e);
+  for (let i = 0; i < checks.length; i += 1) {
+    data.splice(i, 1);
+    insert.removeChild(i);
     localStorage.setItem('Task', JSON.stringify(data));
-  });
+  }
 }
 
-function removeComplete(e) {
+export function removeComplete(e) {
   const insert = document.getElementById('ul-list');
   const closeBtn = document.querySelectorAll('.close');
-  closeBtn.forEach((o) => {
+  closeBtn.forEach((o, index) => {
     if (e.target === o) {
-      data.splice(o, 1);
+      data.splice(index, 1);
       insert.removeChild(o.parentElement.parentElement);
       localStorage.setItem('Task', JSON.stringify(data));
     }
