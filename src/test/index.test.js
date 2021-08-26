@@ -15,17 +15,6 @@ describe('Add and delete item', () => {
     remove(1);
     createTask();
     const list = document.querySelectorAll('#ul-list li');
-    expect(list).toHaveLength(2);
+    expect(list).toHaveLength(0);
   });
 });
-
-// describe('Add and Remove Items from local Storage', () => {
-//   test('Add new item to localStorage', () => {
-//     Add();
-//     expect(JSON.parse(localStorage.getItem('Task'))).toHaveLength(1);
-//   });
-//   test('delete one item from the localStorage', () => {
-//     remove(0);
-//     expect(JSON.parse(localStorage.getItem('Task'))).toHaveLength(0);
-//   });
-// });

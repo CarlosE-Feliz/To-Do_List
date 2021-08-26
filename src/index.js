@@ -3,9 +3,9 @@ import Completed from './interactive';
 import './styles.css';
 
 const data = JSON.parse(localStorage.getItem('Task')) || [];
-
 export function createTask() {
   const insert = global.document.getElementById('ul-list');
+  insert.innerHTML = '';
   for (let i = 0; i < data.length; i += 1) {
     const styles = (data[i].completed) ? 'label-true' : 'list-el';
     const check = (data[i].completed) ? 'checked' : '';
@@ -36,8 +36,10 @@ export function Add() {
 export function remove() {
   const insert = document.getElementById('ul-list');
   const checks = document.querySelectorAll('.label-true');
-  for (let i = 0; i < checks.length; i += 1) {
-    data.splice(i, 1);
+  for (let i = 0; i <= checks.length; i += 1) {
+    const btn = document.querySelector(`#close-${[i]}`);
+    console.log(btn);
+    data.splice(btn, 1);
     insert.removeChild(i);
     localStorage.setItem('Task', JSON.stringify(data));
   }
