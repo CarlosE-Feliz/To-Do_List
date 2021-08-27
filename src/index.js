@@ -2,9 +2,9 @@
 import Completed from './interactive';
 import './styles.css';
 
-const data = JSON.parse(localStorage.getItem('Task')) || [];
-// eslint-disable-next-line new-cap
+let data = JSON.parse(localStorage.getItem('Task')) || [];
 export function createTask() {
+  data = JSON.parse(localStorage.getItem('Task')) || [];
   const insert = global.document.getElementById('ul-list');
   insert.innerHTML = '';
   for (let i = 0; i < data.length; i = 1) {

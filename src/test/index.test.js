@@ -70,21 +70,33 @@ describe('Test delete completedTask', () => {
   });
 });
 
-describe('Test editTask', () => {
-  test('edit task description', () => {
-    document.body.innerHTML = `    
-          <input type="text" id="input" class="input" value="input" placeholder="Add to your list...">
-          <ul class="taskContainer">
-          <li><label><input type="checkbox" class="check-box"><i class="fa fa-check checkIcon"></i><p class="task-description">task one</p></label><div><i class="fa fa-ellipsis-v editIcon icon"></i><i class="fa fa-trash deleteIcon"></i></div></li>
-          <li><label><input type="checkbox" class="check-box"><i class="fa fa-check checkIcon"></i><p class="task-description">task two</p></label><div><i class="fa fa-ellipsis-v editIcon icon"></i><i class="fa fa-trash deleteIcon"></i></div></li>
-          <li><label><input type="checkbox" class="check-box"><i class="fa fa-check checkIcon"></i><p class="task-description">task three</p></label><div><i class="fa fa-ellipsis-v editIcon icon"></i><i class="fa fa-trash deleteIcon"></i></div><li>
-          </ul>
-          <button type="button" class="button" data-action="deleteCompleted">Clear all completed</button> `;
-    const items = document.getElementsByTagName('li');
-    for (let i = 0; i < items.length; i += 1) {
-      const editTaskIcon = document.querySelector('.editIcon');
-      editTaskIcon.addEventListener('click', editTask);
-      localStorage.setItem('Task', editTask);
-    }
-  });
+describe('Edit task description value', () => {
+  test('change first task description value to Feed cat in local Storage',
+    () => {
+      document.body.innerHTML = mockHtml;
+      const instanceMock = jest.spyOn(editTask, 'instance');
+      const list = [
+        {
+          description: 'Wash car',
+          completed: false,
+          index: 1,
+        },
+      ];
+      localStorage.setItem('Task', JSON.stringify(list));
+      createTask();
+      const pDescription = document.querySelector('.input-edit');
+      pDescription.addEventListener = jest
+        .fn()
+        .mockImplementationOnce((event, callback) => {
+          callback();
+        });
+
+      editTask.init(list, 'Jhon Doe', 0);
+      expect(pDescription.addEventListener).toBeCalledWith(
+        'keydown',
+        expect.any(Function),
+      );
+      expect(instanceMock).toBeCalledTimes(1);
+      expect(JSON.parse(localStorage.getItem('Task'))[0].description).toBe('Jhon Doe');
+    });
 });
