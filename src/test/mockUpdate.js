@@ -5,6 +5,7 @@ export const editTask = (taskDescription, editIcon, deleteIcon, tasksArray, id) 
   if (tasksArray[currentTaskIndex].completedStatus) {
     taskDescription.setAttribute('contenteditable', true);
     editIcon.classList.add('none');
+    localStorage.setItem('Task', JSON.stringify(taskDescription));
     deleteIcon.classList.remove('none');
   } else {
     taskDescription.setAttribute('contenteditable', false);

@@ -3,6 +3,7 @@ import Completed from './interactive';
 import './styles.css';
 
 const data = JSON.parse(localStorage.getItem('Task')) || [];
+// eslint-disable-next-line new-cap
 export function createTask() {
   const insert = global.document.getElementById('ul-list');
   insert.innerHTML = '';

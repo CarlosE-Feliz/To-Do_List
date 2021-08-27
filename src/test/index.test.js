@@ -46,6 +46,8 @@ describe('Test the check status function', () => {
     let checkedBox = checkBox.checked;
     checkedBox = true;
     expect(checkedBox).toBe(true);
+    remove(0);
+    expect(JSON.parse(localStorage.getItem('Task'))).toHaveLength(0);
   });
 });
 
@@ -63,6 +65,8 @@ describe('Test delete completedTask', () => {
     for (let i = 0; i < button.length; i += 1) {
       button.addEventListener('click', deleteCompletedTasks);
     }
+    remove(0);
+    expect(JSON.parse(localStorage.getItem('Task'))).toHaveLength(0);
   });
 });
 
