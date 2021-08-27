@@ -1,17 +1,19 @@
-// eslint-disable-next-line func-names
-const localStorage = (function () {
-  // eslint-disable-next-line prefer-const
-  let data = {};
-  return {
-    getItem(key) {
-      return data[key] || null;
-    },
-    setItem(key, value) {
-      data[key] = value.toString();
-    },
-  };
-}());
+class LocalStorageMock {
+  constructor() {
+    this.store = {};
+  }
 
-Object.defineProperty(global, 'localStorage', {
-  value: localStorage,
-});
+  getItem(key) {
+    return this.store[key] || null;
+  }
+
+  setItem(key, value) {
+    this.store[key] = String(value);
+  }
+
+  removeItem(key) {
+    delete this.store[key];
+  }
+}
+
+global.localStorage = new LocalStorageMock();
