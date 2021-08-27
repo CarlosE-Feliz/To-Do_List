@@ -2,7 +2,7 @@
 import { Add, createTask, remove } from '../index';
 import { mockHtml } from './mockhtml';
 import { editTask } from './mockUpdate';
-import { deleteCompletedTasks } from './mockClearC'
+import { deleteCompletedTasks } from './mockClearC';
 
 describe('Add and delete item', () => {
   test('Add one new item to the list', () => {
@@ -28,7 +28,7 @@ describe('Add and Remove Items from local Storage', () => {
   });
   test('delete one item from the localStorage', () => {
     remove(0);
-   expect(JSON.parse(localStorage.getItem('Task'))).toHaveLength(0);
+    expect(JSON.parse(localStorage.getItem('Task'))).toHaveLength(0);
   });
 });
 
