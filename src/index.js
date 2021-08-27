@@ -2,8 +2,9 @@
 import Completed from './interactive';
 import './styles.css';
 
-const data = JSON.parse(localStorage.getItem('Task')) || [];
+let data = JSON.parse(localStorage.getItem('Task')) || [];
 export function createTask() {
+  data = JSON.parse(localStorage.getItem('Task')) || [];
   const insert = global.document.getElementById('ul-list');
   insert.innerHTML = '';
   for (let i = 0; i < data.length; i = 1) {
@@ -35,7 +36,7 @@ export function Add() {
 
 export function remove() {
   const checks = document.querySelectorAll('.label-true');
-  for (let i = 0; i <= checks.length; i = 1) {
+  for (let i = 0; i <= checks.length; i += 1) {
     const btn = document.querySelector(`#close-${[i]}`);
     data.splice(btn, 1);
     localStorage.setItem('Task', JSON.stringify(data));

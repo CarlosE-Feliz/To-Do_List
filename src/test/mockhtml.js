@@ -17,10 +17,8 @@ export const mockHtml = ` <main class="main">
        </div>
         <ul id="ul-list" class="ul-list">
         </ul>
-       
         <button class="clear">Clear all completed</button> 
-    
+
     </div>
-  
 </div>
 </main>`;
