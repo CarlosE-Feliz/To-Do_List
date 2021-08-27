@@ -84,6 +84,7 @@ describe('Test editTask', () => {
     for (let i = 0; i < items.length; i += 1) {
       const editTaskIcon = document.querySelector('.editIcon');
       editTaskIcon.addEventListener('click', editTask);
+      localStorage.setItem('Task', editTask);
     }
   });
 });
